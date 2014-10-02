@@ -1,0 +1,9 @@
+D:\Github\Mac\Mac\bin\Debug\Mac.exe.config
+D:\Github\Mac\Mac\bin\Debug\Mac.exe
+D:\Github\Mac\Mac\bin\Debug\Mac.pdb
+D:\Github\Mac\Mac\obj\Debug\Mac.csprojResolveAssemblyReference.cache
+D:\Github\Mac\Mac\obj\Debug\Mac.Properties.Resources.resources
+D:\Github\Mac\Mac\obj\Debug\Mac.csproj.GenerateResource.Cache
+D:\Github\Mac\Mac\obj\Debug\Mac.exe
+D:\Github\Mac\Mac\obj\Debug\Mac.pdb
+D:\Github\Mac\Mac\obj\Debug\Mac.F_Mac.resources
