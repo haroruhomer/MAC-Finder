@@ -7,3 +7,12 @@ D:\Github\Mac\Mac\obj\Debug\Mac.csproj.GenerateResource.Cache
 D:\Github\Mac\Mac\obj\Debug\Mac.exe
 D:\Github\Mac\Mac\obj\Debug\Mac.pdb
 D:\Github\Mac\Mac\obj\Debug\Mac.F_Mac.resources
+D:\Github\MAC-Finder\Mac\bin\Debug\Mac.exe.config
+D:\Github\MAC-Finder\Mac\obj\Debug\Mac.exe
+D:\Github\MAC-Finder\Mac\obj\Debug\Mac.pdb
+D:\Github\MAC-Finder\Mac\bin\Debug\Mac.exe
+D:\Github\MAC-Finder\Mac\bin\Debug\Mac.pdb
+D:\Github\MAC-Finder\Mac\obj\Debug\Mac.csprojResolveAssemblyReference.cache
+D:\Github\MAC-Finder\Mac\obj\Debug\Mac.F_Mac.resources
+D:\Github\MAC-Finder\Mac\obj\Debug\Mac.Properties.Resources.resources
+D:\Github\MAC-Finder\Mac\obj\Debug\Mac.csproj.GenerateResource.Cache

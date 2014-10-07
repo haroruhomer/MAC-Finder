@@ -17,10 +17,12 @@ namespace Mac
 {
     public partial class F_Mac : Form
     {
-        private int startIP = 12;
-        private int endIP = 16;
+        private int startIP = 0;
+        private int endIP = 255;
         private string ipPrefix = "192.168.0";
+        private String[] dominio = new String[4];
         private ArrayList computerList =new ArrayList();// null;
+        private Thread hilo1;
 
         //public AllPc(string ipPrefix, int startIP, int endIP)
         //{
@@ -33,6 +35,7 @@ namespace Mac
         {
             InitializeComponent();
             ListBox.CheckForIllegalCrossThreadCalls = false;
+            Label.CheckForIllegalCrossThreadCalls = false;
         }
 
         [DllImport("iphlpapi.dll", ExactSpelling = true)]
@@ -40,6 +43,20 @@ namespace Mac
 
         public void ScanComputers()
         {
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+            dominio = localIP.Split('.');
+            ipPrefix = dominio[0] + '.' + dominio[1] + '.' + dominio[2];
+
+            MessageBox.Show(ipPrefix);
             for (int i = startIP; i <= endIP; i++)
             {
                 Thread.Sleep(10);
@@ -53,6 +70,8 @@ namespace Mac
 
                 try
                 {
+
+                    L_ip.Text = myScanIP.ToString();
                     myScanHost = Dns.GetHostByAddress(myScanIP);
                     iPHostEntry = Dns.GetHostEntry(myScanIP);
                     //IP = iPHostEntry.AddressList[1].ToString();
@@ -74,8 +93,6 @@ namespace Mac
                     arr[1] = scanIP;
                     computerList.Add(arr);
                     LB_lista1.Items.Add(myScanHost.HostName.ToString() + " IP:" + myScanIP+" MAC: "+MAC);
-                    Console.Write(myScanHost.HostName.ToString() + "\t");
-                    Console.WriteLine(scanIP.ToString());
                 }
             }
             LB_lista1.Items.Add("fin");
@@ -83,7 +100,7 @@ namespace Mac
         private void F_Mac_Load(object sender, EventArgs e)
         {
             LB_lista1.Items.Add("holi");
-            Thread hilo1 = new Thread(new ThreadStart(ScanComputers));
+            hilo1 = new Thread(new ThreadStart(ScanComputers));
             hilo1.Start();
             //ScanComputers();
         }
@@ -95,6 +112,7 @@ namespace Mac
 
         private void F_Mac_FormClosing(object sender, FormClosingEventArgs e)
         {
+            hilo1.Abort();
         }
     }
 }
